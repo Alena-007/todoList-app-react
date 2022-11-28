@@ -17,7 +17,7 @@ export const App = () => {
         todos={todos}
         setTodos={setTodos}
       />
-      <TodoList />
+      <TodoList todos={todos} />
     </div>
   );
 };
