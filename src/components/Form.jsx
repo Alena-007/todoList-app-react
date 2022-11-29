@@ -1,4 +1,5 @@
 import React from 'react';
+const { v4 } = require('uuid');
 
 const Form = ({ inputValue, setInputValue, todos, setTodos, setStatus }) => {
   const inputValueHandler = e => {
@@ -7,10 +8,7 @@ const Form = ({ inputValue, setInputValue, todos, setTodos, setStatus }) => {
 
   const submitTodoHandler = e => {
     e.preventDefault();
-    setTodos([
-      ...todos,
-      { text: inputValue, completed: false, id: Math.random() * 1000 },
-    ]);
+    setTodos([...todos, { text: inputValue, completed: false, id: v4() }]);
     setInputValue('');
   };
 
